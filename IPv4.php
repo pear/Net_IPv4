@@ -308,6 +308,37 @@ class Net_IPv4 extends PEAR
     {
         return((double)(sprintf("%u", ip2long($ip))));
     }
+
+    /**
+     * Determines whether or not the supplied IP is within the supplied network.
+     *
+     * This function determines whether an IP address is within a network.
+     * The IP address ($ip) must be supplied in dot-quad format, and the
+     * network ($network) may be either a string containing a CIDR
+     * formatted network definition, or a Net_IPv4 object.
+     *
+     * @param  string $ip A quad-dot representation of an IP address 
+     * @param  string $network A string representing the network in CIDR format or a Net_IPv4 object.
+     * @return boolean  true if the IP address exists within the network
+     */
+    function ipInNetwork($ip, $network)
+    {
+        if (! is_object($network) || get_class($network) != 'net_ipv4') {
+            $network = Net_IPv4::parseAddress($network);
+        }
+        if (! is_object($network) || get_class($network) != 'net_ipv4') {
+            return($network);
+        }
+        $net = Net_IPv4::ip2double($network->network);
+        $bcast = Net_IPv4::ip2double($network->broadcast);
+        $ip = Net_IPv4::ip2double($ip);
+        unset($network);
+        if ($ip >= $net && $ip <= $bcast) {
+            return(TRUE);
+        }
+        return(FALSE);
+        return((double)(sprintf("%u", ip2long($ip))));
+    }
 }
 
 ?>

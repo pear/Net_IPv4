@@ -19,15 +19,41 @@
     </maintainer>
   </maintainers>
   <release>
-    <version>1.0</version>
-    <date>2002-08-20</date>
+    <version>1.2</version>
+    <date>Unknown</date>
     <license>PHP 2.0</license>
     <state>stable</state>
-    <notes>Initial Release</notes>
+    <notes>Added ipInNetwork method.</notes>
     <filelist>
       <dir name="/" baseinstalldir="Net">
         <file role="php">IPv4.php</file>
       </dir>
     </filelist>
   </release> 
+  <changelog>
+    <release>
+      <version>1.1</version>
+      <date>2003-06-22</date>
+      <license>PHP 2.0</license>
+      <state>stable</state>
+      <notes>Created an ip2double method as a workaround for PHP long ints being unsigned</notes>
+      <filelist>
+        <dir name="/" baseinstalldir="Net">
+          <file role="php">IPv4.php</file>
+        </dir>
+      </filelist>
+    </release> 
+    <release>
+      <version>1.0</version>
+      <date>2002-08-20</date>
+      <license>PHP 2.0</license>
+      <state>stable</state>
+      <notes>Initial Release</notes>
+      <filelist>
+        <dir name="/" baseinstalldir="Net">
+          <file role="php">IPv4.php</file>
+        </dir>
+      </filelist>
+    </release> 
+  </changelog>
 </package>

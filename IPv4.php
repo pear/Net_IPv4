@@ -289,6 +289,14 @@ class Net_IPv4 extends PEAR
         }
         return(FALSE);
     }
+    /**
+     * Converts an IP address to a PHP double.  Better than ip2long because
+     * a long in PHP is a signed integer.
+     */
+    function ip2double($ip)
+    {
+        return((double)(sprintf("%u", ip2long($ip))));
+    }
 }
 
 ?>

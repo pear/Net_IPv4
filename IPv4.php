@@ -158,6 +158,17 @@ class Net_IPv4 extends PEAR
      * The third would be [IP Address] [Subnet Mask as Hex string]
      * 192.168.0.0/ffff0000
      *
+     * Usage:
+     *
+     * $cidr = '192.168.0.50/16';
+     * $net = Net_IPv4::parseAddress($cidr);
+     * echo $net->network; // 192.168.0.0
+     * echo $net->ip; // 192.168.0.50
+     * echo $net->broadcast; // 192.168.255.255
+     * echo $net->bitmask; // 16
+     * echo $net->long; // 3232235520 (long/double version of 192.168.0.50)
+     * echo $net->netmask; // 255.255.0.0
+     *
      * @param  string $ip IP address netmask combination
      * @return object     true if syntax is valid, otherwise false
      */
@@ -238,7 +249,7 @@ class Net_IPv4 extends PEAR
             if (! $this->validateIP($this->ip)) {
                 return($this->raiseError("invalid IP address"));
             }
-            $this->long = ip2long($this->ip);
+            $this->long = $this->ip2double($this->ip);
         } else if (is_numeric($this->long)) {
             $this->ip = long2ip($this->long);
         } else {

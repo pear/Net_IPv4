@@ -20,29 +20,17 @@
   </maintainers>
   <release>
     <version>1.2</version>
-    <date>Unknown</date>
+    <date>2004-04-27</date>
     <license>PHP 2.0</license>
     <state>stable</state>
-    <notes>Added ipInNetwork method.</notes>
+    <notes>Added ipInNetwork method. Fixed some reported bugs.  Net_IPv4 no longer extends the base PEAR class to speed instantiation</notes>
     <filelist>
       <dir name="/" baseinstalldir="Net">
-        <file role="php">IPv4.php</file>
+	<file role="php">IPv4.php</file>
       </dir>
     </filelist>
   </release> 
   <changelog>
-    <release>
-      <version>1.2</version>
-      <date>4/27/04</date>
-      <license>PHP 2.0</license>
-      <state>stable</state>
-      <notes>Added ipInNetwork method. Fixed some reported bugs.  Net_IPv4 no longer extends the base PEAR class to speed instantiation</notes>
-      <filelist>
-	<dir name="/" baseinstalldir="Net">
-	  <file role="php">IPv4.php</file>
-	</dir>
-      </filelist>
-    </release> 
     <release>
       <version>1.1</version>
       <date>2003-06-22</date>

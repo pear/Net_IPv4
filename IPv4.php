@@ -97,9 +97,9 @@ class Net_IPv4
     function validateIP($ip)
     {
         if ($ip == long2ip(ip2long($ip))) {
-            return(TRUE);
+            return true;
         } else {
-            return(FALSE);
+            return false;
         }
     }
 
@@ -114,7 +114,7 @@ class Net_IPv4
      */
     function check_ip($ip)
     {
-        return($this->validateIP($ip));
+        return $this->validateIP($ip);
     }
 
     /**
@@ -131,9 +131,9 @@ class Net_IPv4
     function validateNetmask($netmask)
     {
         if (! in_array($netmask, $GLOBALS['Net_IPv4_Netmask_Map'])) {
-            return(FALSE);
+            return false;
         }
-        return(TRUE);
+        return true;
     }
 
     /**
@@ -177,7 +177,7 @@ class Net_IPv4
         if (strchr($address, "/")) {
             $parts = explode("/", $address);
             if (! $myself->validateIP($parts[0])) {
-                return(PEAR::raiseError("invalid IP address"));
+                return PEAR::raiseError("invalid IP address");
             }
             $myself->ip = $parts[0];
 
@@ -195,7 +195,7 @@ class Net_IPv4
              */
             } else if (strchr($parts[1], ".")) {
                 if (! $myself->validateNetmask($parts[1])) {
-                    return(PEAR::raiseError("invalid netmask value"));
+                    return PEAR::raiseError("invalid netmask value");
                 }
                 $myself->netmask = $parts[1];
 
@@ -210,15 +210,15 @@ class Net_IPv4
              *  Some unknown format of netmask was entered
              */
             } else {
-                return(PEAR::raiseError("invalid netmask value"));
+                return PEAR::raiseError("invalid netmask value");
             }
             $myself->calculate();
-            return($myself);
+            return $myself;
         } else if ($myself->validateIP($address)) {
             $myself->ip = $address;
-            return($myself);
+            return $myself;
         } else {
-            return(PEAR::raiseError("invalid IP address"));
+            return PEAR::raiseError("invalid IP address");
         }
     }
     
@@ -237,7 +237,7 @@ class Net_IPv4
 
         if (! is_a($this, "net_ipv4")) {
             $myself = new Net_IPv4;
-            return(PEAR::raiseError("cannot calculate on uninstantiated Net_IPv4 class"));
+            return PEAR::raiseError("cannot calculate on uninstantiated Net_IPv4 class");
         }
 
         /* Find out if we were given an ip address in dot quad notation or
@@ -246,13 +246,13 @@ class Net_IPv4
          */
         if (strlen($this->ip)) {
             if (! $this->validateIP($this->ip)) {
-                return(PEAR::raiseError("invalid IP address"));
+                return PEAR::raiseError("invalid IP address");
             }
             $this->long = $this->ip2double($this->ip);
         } else if (is_numeric($this->long)) {
             $this->ip = long2ip($this->long);
         } else {
-           return(PEAR::raiseError("ip address not specified"));
+           return PEAR::raiseError("ip address not specified");
         }
 
         /*
@@ -265,59 +265,59 @@ class Net_IPv4
             $validNM_rev = array_flip($validNM);
             $this->bitmask = $validNM_rev[$this->netmask];
         } else {
-            return(PEAR::raiseError("netmask or bitmask are required for calculation"));
+            return PEAR::raiseError("netmask or bitmask are required for calculation");
         }
         $this->network = long2ip(ip2long($this->ip) & ip2long($this->netmask));
         $this->broadcast = long2ip(ip2long($this->ip) |
                 (ip2long($this->netmask) ^ ip2long("255.255.255.255")));
-        return(TRUE);
+        return true;
     }
 
 	function getNetmask($length) {
 		if (! PEAR::isError($ipobj = Net_IPv4::parseAddress("0.0.0.0/" . $length))) {
 			$mask = $ipobj->netmask;
 			unset($ipobj);
-			return($mask);
+			return $mask;
 		}
-		return(FALSE);
+		return false;
 	}
 
 	function getNetLength($netmask) {
 		if (! PEAR::isError($ipobj = Net_IPv4::parseAddress("0.0.0.0/" . $netmask))) {
 			$bitmask = $ipobj->bitmask;
 			unset($ipobj);
-			return($bitmask);
+			return $bitmask;
 		}
-		return(FALSE);
+		return false;
 	}
 
 	function getSubnet($ip, $netmask) {
 		if (! PEAR::isError($ipobj = Net_IPv4::parseAddress($ip . "/" . $netmask))) {
 			$net = $ipobj->network;
 			unset($ipobj);
-			return($net);
+			return $net;
 		}
-		return(FALSE);
+		return false;
 	}
 
 	function inSameSubnet($ip1, $ip2) {
 		if (! is_object($ip1) || strcasecmp(get_class($ip1), 'net_ipv4') <> 0) {
 			$ipobj1 = Net_IPv4::parseAddress($ip1);
 			if (PEAR::isError($ipobj)) {
-                return(PEAR::raiseError("IP addresses must be an understood format or a Net_IPv4 object"));
+                return PEAR::raiseError("IP addresses must be an understood format or a Net_IPv4 object");
 			}
 		}
 		if (! is_object($ip2) || strcasecmp(get_class($ip2), 'net_ipv4') <> 0) {
 			$ipobj2 = Net_IPv4::parseAddress($ip2);
 			if (PEAR::isError($ipobj)) {
-                return(PEAR::raiseError("IP addresses must be an understood format or a Net_IPv4 object"));
+                return PEAR::raiseError("IP addresses must be an understood format or a Net_IPv4 object");
 			}
 		}
 		if ($ipobj1->network == $ipobj2->network &&
 				$ipobj1->bitmask == $ipobj2->bitmask) {
-				return(TRUE);
+				return true;
 		}
-		return(FALSE);
+		return false;
 	}
 
     /**
@@ -326,12 +326,10 @@ class Net_IPv4
     function atoh($addr)
     {
         if (! Net_IPv4::validateIP($addr)) {
-            return(FALSE);
+            return false;
         }
         $ap = explode(".", $addr);
-        return(sprintf("%02x%02x%02x%02x",
-                    $ap[0], $ap[1],
-                    $ap[2], $ap[3]));
+        return sprintf("%02x%02x%02x%02x", $ap[0], $ap[1], $ap[2], $ap[3]);
     }
 
     /**
@@ -341,10 +339,10 @@ class Net_IPv4
     {
         if (eregi("^([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$",
                     $addr, $regs)) {
-            return(hexdec($regs[1]) . "." .  hexdec($regs[2]) . "." .
-                hexdec($regs[3]) . "." .  hexdec($regs[4]));
+            return hexdec($regs[1]) . "." .  hexdec($regs[2]) . "." .
+                   hexdec($regs[3]) . "." .  hexdec($regs[4]);
         }
-        return(FALSE);
+        return false;
     }
     /**
      * Converts an IP address to a PHP double.  Better than ip2long because
@@ -352,7 +350,7 @@ class Net_IPv4
      */
     function ip2double($ip)
     {
-        return((double)(sprintf("%u", ip2long($ip))));
+        return (double)(sprintf("%u", ip2long($ip)));
     }
 
     /**

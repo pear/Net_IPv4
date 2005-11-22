@@ -301,13 +301,13 @@ class Net_IPv4
 	}
 
 	function inSameSubnet($ip1, $ip2) {
-		if (! is_object($ip1) || strtolower(get_class($ip1)) != "net_ipv4") {
+		if (! is_object($ip1) || strcasecmp(get_class($ip1), 'net_ipv4') <> 0) {
 			$ipobj1 = Net_IPv4::parseAddress($ip1);
 			if (PEAR::isError($ipobj)) {
                 return(PEAR::raiseError("IP addresses must be an understood format or a Net_IPv4 object"));
 			}
 		}
-		if (! is_object($ip2) || strtolower(get_class($ip2)) != "net_ipv4") {
+		if (! is_object($ip2) || strcasecmp(get_class($ip2), 'net_ipv4') <> 0) {
 			$ipobj2 = Net_IPv4::parseAddress($ip2);
 			if (PEAR::isError($ipobj)) {
                 return(PEAR::raiseError("IP addresses must be an understood format or a Net_IPv4 object"));
@@ -369,7 +369,7 @@ class Net_IPv4
      */
     function ipInNetwork($ip, $network)
     {
-        if (! is_object($network) || get_class($network) != 'net_ipv4') {
+        if (! is_object($network) || strcasecmp(get_class($network), 'net_ipv4') <> 0) {
             $network = Net_IPv4::parseAddress($network);
         }
         

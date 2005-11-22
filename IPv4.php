@@ -232,7 +232,8 @@ class Net_IPv4
      *
      * @return mixed     true if no errors occured, otherwise PEAR_Error object
      */
-    function calculate() {
+    function calculate()
+    {
         $validNM = $GLOBALS['Net_IPv4_Netmask_Map'];
 
         if (! is_a($this, "net_ipv4")) {
@@ -273,7 +274,8 @@ class Net_IPv4
         return true;
     }
 
-	function getNetmask($length) {
+	function getNetmask($length)
+	{
 		if (! PEAR::isError($ipobj = Net_IPv4::parseAddress("0.0.0.0/" . $length))) {
 			$mask = $ipobj->netmask;
 			unset($ipobj);
@@ -282,7 +284,8 @@ class Net_IPv4
 		return false;
 	}
 
-	function getNetLength($netmask) {
+	function getNetLength($netmask)
+	{
 		if (! PEAR::isError($ipobj = Net_IPv4::parseAddress("0.0.0.0/" . $netmask))) {
 			$bitmask = $ipobj->bitmask;
 			unset($ipobj);
@@ -291,7 +294,8 @@ class Net_IPv4
 		return false;
 	}
 
-	function getSubnet($ip, $netmask) {
+	function getSubnet($ip, $netmask)
+	{
 		if (! PEAR::isError($ipobj = Net_IPv4::parseAddress($ip . "/" . $netmask))) {
 			$net = $ipobj->network;
 			unset($ipobj);
@@ -300,7 +304,8 @@ class Net_IPv4
 		return false;
 	}
 
-	function inSameSubnet($ip1, $ip2) {
+	function inSameSubnet($ip1, $ip2)
+	{
 		if (! is_object($ip1) || strcasecmp(get_class($ip1), 'net_ipv4') <> 0) {
 			$ipobj1 = Net_IPv4::parseAddress($ip1);
 			if (PEAR::isError($ipobj)) {

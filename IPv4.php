@@ -372,18 +372,15 @@ class Net_IPv4
         if (! is_object($network) || get_class($network) != 'net_ipv4') {
             $network = Net_IPv4::parseAddress($network);
         }
-        if (! is_object($network) || get_class($network) != 'net_ipv4') {
-            return($network);
-        }
+        
         $net = Net_IPv4::ip2double($network->network);
         $bcast = Net_IPv4::ip2double($network->broadcast);
         $ip = Net_IPv4::ip2double($ip);
         unset($network);
         if ($ip >= $net && $ip <= $bcast) {
-            return(TRUE);
+            return true;
         }
-        return(FALSE);
-        return((double)(sprintf("%u", ip2long($ip))));
+        return false;
     }
 }
 

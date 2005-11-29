@@ -17,6 +17,12 @@
       <email>bate@php.net</email>
       <role>lead</role>
     </maintainer>
+    <maintainer>
+      <user>fa</user>
+      <name>Florian Anderiasch</name>
+      <email>fa@php.net</email>
+      <role>developer</role>
+    </maintainer>
   </maintainers>
   <release>
     <version>1.2</version>

@@ -17,7 +17,7 @@ $packagedir = &$cvsdir;
  */
 $category = 'Net';
 $package = 'Net_IPv4';
-$version = '1.3';
+$version = '1.3.0';
 $state = 'stable';
 
 $summary = 'IPv4 network calculations and validation.';

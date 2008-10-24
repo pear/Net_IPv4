@@ -1,6 +1,7 @@
 --TEST--
 PEAR::Net_IPv4
 --FILE--
+<?php
 require_once 'IPv4Test.php';
 require_once 'SimpleTestListener.php';
 require_once 'PHPUnit2/Framework/TestResult.php';

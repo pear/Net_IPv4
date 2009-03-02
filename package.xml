@@ -1,88 +1,148 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
-<package version="1.0" packagerversion="1.4.5">
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
  <name>Net_IPv4</name>
+ <channel>pear.php.net</channel>
  <summary>IPv4 network calculations and validation.</summary>
  <description>Class used for calculating IPv4 (AF_INET family) address information
+
 such as network as network address, broadcast address, and IP address
+
 validity.
+ 
  </description>
- <maintainers>
-  <maintainer>
-   <user>bate</user>
-   <name>Marco Kaiser</name>
-   <email>bate@php.net</email>
-   <role>lead</role>
-  </maintainer>
-  <maintainer>
-   <user>fa</user>
-   <name>Florian Anderiasch</name>
-   <email>fa@php.net</email>
-   <role>developer</role>
-  </maintainer>
-  </maintainers>
- <release>
-  <version>1.3.0</version>
-  <date>2005-11-30</date>
-  <license>PHP License 3.01</license>
-  <state>stable</state>
-  <notes>* Fixed all pending bugs
+ <lead>
+  <name>Marco Kaiser</name>
+  <user>bate</user>
+  <email>bate@php.net</email>
+  <active>yes</active>
+ </lead>
+ <developer>
+  <name>Florian Anderiasch</name>
+  <user>fa</user>
+  <email>fa@php.net</email>
+  <active>yes</active>
+ </developer>
+ <date>2009-03-02</date>
+ <time>14:46:41</time>
+ <version>
+  <release>1.3.0</release>
+  <api>1.3.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license>PHP License 3.01</license>
+ <notes>* Fixed all pending bugs
+
 * Fixed coding styles
+
 * Added class documentation
-  </notes>
-  <filelist>
-   <dir name="/" baseinstalldir="Net">
-    <file role="php" name="IPv4.php">
-     <replace type="package-info" from="@package_version@" to="version"/>
-     <replace type="pear-config" from="@data_dir@" to="data_dir"/>
-    </file>
-   </dir> <!-- / -->
-  </filelist>
- </release>
+  
+ </notes>
+ <contents>
+  <dir name="/">
+   <file baseinstalldir="Net" name="IPv4.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+    <tasks:replace from="@data_dir@" to="data_dir" type="pear-config" />
+   </file>
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
  <changelog>
-   <release>
-    <version>1.0</version>
-    <date>2002-08-20</date>
-    <license>PHP 2.0</license>
-    <state>stable</state>
-    <notes>Initial Release
-    </notes>
-   </release>
-   <release>
-    <version>1.1</version>
-    <date>2003-06-22</date>
-    <license>PHP 2.0</license>
-    <state>stable</state>
-    <notes>Created an ip2double method as a workaround for PHP long ints being unsigned
-    </notes>
-   </release>
-   <release>
-    <version>1.2</version>
-    <date>2004-04-27</date>
-    <license>PHP 2.0</license>
-    <state>stable</state>
-    <notes>Added ipInNetwork method. Fixed some reported bugs.  Net_IPv4 no longer extends the base PEAR class to speed instantiation
-    </notes>
-   </release>
-   <release>
-    <version>1.3</version>
-    <date>2005-11-30</date>
-    <license>PHP License 3.01</license>
-    <state>stable</state>
-    <notes>* Fixed all pending bugs
+  <release>
+   <version>
+    <release>1.0</release>
+    <api>1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2002-08-20</date>
+   <license uri="http://www.example.com">PHP 2.0</license>
+   <notes>Initial Release
+    
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1</release>
+    <api>1.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2003-06-22</date>
+   <license uri="http://www.example.com">PHP 2.0</license>
+   <notes>Created an ip2double method as a workaround for PHP long ints being unsigned
+    
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2</release>
+    <api>1.2</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2004-04-27</date>
+   <license uri="http://www.example.com">PHP 2.0</license>
+   <notes>Added ipInNetwork method. Fixed some reported bugs.  Net_IPv4 no longer extends the base PEAR class to speed instantiation
+    
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3</release>
+    <api>1.3</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-11-30</date>
+   <license uri="http://www.example.com">PHP License 3.01</license>
+   <notes>* Fixed all pending bugs
 * Fixed coding styles
 * Added class documentation
-    </notes>
-   </release>
-   <release>
-    <version>1.3.0</version>
-    <date>2005-11-30</date>
-    <license>PHP License 3.01</license>
-    <state>stable</state>
-    <notes>* Fixed all pending bugs
+    
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.0</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-11-30</date>
+   <license uri="http://www.example.com">PHP License 3.01</license>
+   <notes>* Fixed all pending bugs
+
 * Fixed coding styles
+
 * Added class documentation
-    </notes>
-   </release>
+    
+   </notes>
+  </release>
  </changelog>
 </package>

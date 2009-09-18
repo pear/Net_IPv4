@@ -1,16 +1,12 @@
 <?php
-require_once 'PHPUnit2/Framework/TestCase.php';
+require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/IPv4.php';
 require_once 'MyIPv4.php';
 
-class IPv4Test extends PHPUnit2_Framework_TestCase {
+class IPv4Test extends PHPUnit_Framework_TestCase {
     protected $net;
     protected $quadIPs;
     protected $hexIPs;
-    
-    #function IPv4Test($name) {
-        #$this->PHPUnit_TestCase($name);    
-    #}
     
     protected function setUp() {
         $this->net = new Net_IPv4();

@@ -20,10 +20,10 @@ validity.</description>
   <email>fa@php.net</email>
   <active>yes</active>
  </developer>
- <date>2009-09-18</date>
+ <date>2010-08-07</date>
  <time>02:01:26</time>
  <version>
-  <release>1.3.1</release>
+  <release>1.3.2</release>
   <api>1.3.0</api>
  </version>
  <stability>
@@ -33,8 +33,8 @@ validity.</description>
  <license>PHP License 3.01</license>
  <notes>
    QA Release
-* Updated to package 2.0
-* Updated to PHPUnit 3 tests
+* Fixed Bug #16745 
+* Fixed Bug #16890 
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -152,6 +152,23 @@ Added ipInNetwork method. Fixed some reported bugs.  Net_IPv4 no longer extends 
    QA Release
 * Updated to package 2.0
 * Updated to PHPUnit 3 tests
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.2</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2019-08-07</date>
+   <license>PHP License 3.01</license>
+   <notes>
+   QA Release
+* Fixed Bug #16745 
+* Fixed Bug #16890 
    </notes>
   </release>
  </changelog>

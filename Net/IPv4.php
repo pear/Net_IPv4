@@ -436,7 +436,7 @@ class Net_IPv4
         if (! is_object($network) || strcasecmp(get_class($network), 'net_ipv4') <> 0) {
             $network = Net_IPv4::parseAddress($network);
         }
-        if (strcasecmp(get_class($network), 'pear_error') == 0) {
+        if (strcasecmp(get_class($network), 'pear_error') === 0) {
             return false;
         }
         $net = Net_IPv4::ip2double($network->network);

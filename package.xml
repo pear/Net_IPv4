@@ -24,7 +24,7 @@ validity.</description>
 	<date>2010-08-10</date>
 	<time>09:01:26</time>
 	<version>
-		<release>1.3.3</release>
+		<release>1.3.4</release>
 		<api>1.3.0</api>
 	</version>
 	<stability>
@@ -34,7 +34,7 @@ validity.</description>
 	<license>PHP License 3.01</license>
 	<notes>
    QA Release
-* Fixed Bug #17688 issue with result parsing address check
+* Fixed Bug #17800 fixed typo in check
  </notes>
 	<contents>
 		<dir baseinstalldir="/" name="/">

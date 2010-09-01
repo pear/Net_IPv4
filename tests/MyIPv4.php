@@ -1,7 +1,7 @@
 <?php
 class MyIPv4 {
     public function validateIP($ip) {
-        $quad = split('\.', $ip);
+        $quad = explode('.', $ip);
         if (count($quad) != 4) {
             return false;
         }
@@ -16,7 +16,7 @@ class MyIPv4 {
     }
     
     public function atoh($ip) {
-        $quad = split('\.', $ip);
+        $quad = explode('.', $ip);
         $new = array();
         foreach($quad as $k => $v) {
             $n = str_pad(dechex($v), 2, "0", STR_PAD_LEFT);

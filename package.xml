@@ -21,7 +21,7 @@ validity.</description>
 		<email>fa@php.net</email>
 		<active>yes</active>
 	</developer>
-	<date>2010-08-10</date>
+	<date>2010-09-08</date>
 	<time>09:01:26</time>
 	<version>
 		<release>1.3.4</release>
@@ -185,6 +185,21 @@ Added ipInNetwork method. Fixed some reported bugs.  Net_IPv4 no longer extends 
 			<notes>
    QA Release
 * Fixed Bug #17688 issue with result parsing address check
+   </notes>
+		</release>		<release>
+			<version>
+				<release>1.3.4</release>
+				<api>1.3.0</api>
+			</version>
+			<stability>
+				<release>stable</release>
+				<api>stable</api>
+			</stability>
+			<date>2010-09-08</date>
+			<license>PHP License 3.01</license>
+			<notes>
+   QA Release
+* Fixed Bug #17800 fixed typo in check
    </notes>
 		</release>
 	</changelog>

@@ -23,29 +23,26 @@ class IPv4Test extends PHPUnit_Framework_TestCase {
     
     public function test_atoh() {
         foreach ($this->quadIPs as $ip => $v) {
-            $this->assertTrue(Net_IPv4::atoh($ip) === MyIPv4::atoh($ip));
+            $this->assertTrue($this->net->atoh($ip) === MyIPv4::atoh($ip));
         }
     }
     
     public function test_htoa() {
         foreach ($this->hexIPs as $ip => $v) {
-            $this->assertTrue(Net_IPv4::htoa($ip) === MyIPv4::htoa($ip));
+            $this->assertTrue($this->net->htoa($ip) === MyIPv4::htoa($ip));
         }
     }
     
     public function test_validateIP() {
         foreach ($this->quadIPs as $ip => $v) {
-            $this->assertTrue(Net_IPv4::validateIP($ip) === MyIPv4::validateIP($ip));
+            $this->assertTrue($this->net->validateIP($ip) === MyIPv4::validateIP($ip));
         }
     }
     public function test_ip2double() {
         foreach ($this->quadIPs as $k => $v) {
-            $this->assertTrue(Net_IPv4::ip2double($k) == $v);
+            $this->assertTrue($this->net->ip2double($k) == $v);
         }
     }
     
     
 }
-
-    
-?>

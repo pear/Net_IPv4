@@ -10,6 +10,7 @@ class IPv4Test extends PHPUnit_Framework_TestCase {
     
     protected function setUp() {
         $this->net = new Net_IPv4();
+        $this->expected = new MyIPv4();
         $this->quadIPs = array('10.0.0.15' => 167772175, '172.16.0.155' => 2886729883,
         '192.168.0.255' => 3232235775, '1.2.3.4' => 16909060, '1.0.0.0' => 16777216,
         '255.255.255.255' => 4294967295, '127.0.0.1' => 2130706433);
@@ -23,24 +24,24 @@ class IPv4Test extends PHPUnit_Framework_TestCase {
     
     public function test_atoh() {
         foreach ($this->quadIPs as $ip => $v) {
-            $this->assertTrue($this->net->atoh($ip) === MyIPv4::atoh($ip));
+            $this->assertSame($this->net->atoh($ip), $this->expected->atoh($ip));
         }
     }
     
     public function test_htoa() {
         foreach ($this->hexIPs as $ip => $v) {
-            $this->assertTrue($this->net->htoa($ip) === MyIPv4::htoa($ip));
+            $this->assertSame($this->net->htoa($ip), $this->expected->htoa($ip));
         }
     }
     
     public function test_validateIP() {
         foreach ($this->quadIPs as $ip => $v) {
-            $this->assertTrue($this->net->validateIP($ip) === MyIPv4::validateIP($ip));
+            $this->assertSame($this->net->validateIP($ip), $this->expected->validateIP($ip));
         }
     }
     public function test_ip2double() {
         foreach ($this->quadIPs as $k => $v) {
-            $this->assertTrue($this->net->ip2double($k) == $v);
+            $this->assertSame($this->net->ip2double($k), $v);
         }
     }
     

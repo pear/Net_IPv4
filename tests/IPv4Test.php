@@ -1,5 +1,5 @@
 <?php
-require_once 'PHPUnit/Framework/TestCase.php';
+#require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/IPv4.php';
 require_once 'MyIPv4.php';
 

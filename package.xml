@@ -20,11 +20,10 @@ validity.</description>
   <email>fa@php.net</email>
   <active>yes</active>
  </developer>
- <date>2014-03-24</date>
- <time>00:18:09</time>
+ <date>2018-12-08</date>
  <version>
-  <release>1.4.0</release>
-  <api>1.4.0</api>
+  <release>1.3.5</release>
+  <api>1.3.0</api>
  </version>
  <stability>
   <release>stable</release>
@@ -32,15 +31,15 @@ validity.</description>
  </stability>
  <license>PHP License 3.01</license>
  <notes>
-Require php5
+(first available Composer release)
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
-   <file baseinstalldir="/" md5sum="84ee601f43c82cd936e1e1d7df9d74a8" name="Net/IPv4.php" role="php" />
-   <file baseinstalldir="/" md5sum="0accb1a9d83bf5191765e13bea389342" name="tests/AllTests.php" role="test" />
-   <file baseinstalldir="/" md5sum="91e74f430b56c22e5830ac59cb504265" name="tests/IPv4Test.php" role="test" />
-   <file baseinstalldir="/" md5sum="13e92acbc70983f7972c0286211ffd46" name="tests/MyIPv4.php" role="test" />
-   <file baseinstalldir="/" md5sum="524ce3bc59878f7869270949c8ec4075" name="composer.json" role="data" />
+   <file baseinstalldir="/" name="Net/IPv4.php" role="php" />
+   <file baseinstalldir="/" name="tests/AllTests.php" role="test" />
+   <file baseinstalldir="/" name="tests/IPv4Test.php" role="test" />
+   <file baseinstalldir="/" name="tests/MyIPv4.php" role="test" />
+   <file baseinstalldir="/" name="composer.json" role="data" />
   </dir>
  </contents>
  <dependencies>

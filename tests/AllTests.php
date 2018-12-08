@@ -3,7 +3,7 @@ if (!defined('PHPUNIT_MAIN_METHOD')) {
     define('PHPUNIT_MAIN_METHOD', 'Net_IPv4_AllTests::main');
 }
 
-require_once 'PHPUnit/TextUI/TestRunner.php';
+#require_once 'PHPUnit/TextUI/TestRunner.php';
 
 require_once 'IPv4Test.php';
 

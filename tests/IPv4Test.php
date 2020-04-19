@@ -1,9 +1,8 @@
 <?php
-require_once 'PHPUnit/Framework/TestCase.php';
 require_once 'Net/IPv4.php';
 require_once 'MyIPv4.php';
 
-class IPv4Test extends PHPUnit_Framework_TestCase {
+class IPv4Test extends PHPUnit\Framework\TestCase {
     protected $net;
     protected $quadIPs;
     protected $hexIPs;

@@ -14,7 +14,8 @@
     "autoload": {
         "psr-0": {
             "Net": "./"
-        }
+        },
+        "exclude-from-classmap": ["tests/"]
     },
     "description": "More info available on: http://pear.php.net/package/Net_IPv4",
     "include-path": [
